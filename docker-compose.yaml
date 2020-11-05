@@ -1,0 +1,17 @@
+version: '3'
+services:
+  db:
+    image: mysql/mysql-server:5.7
+    restart: always
+    env_file:
+      - db.env
+    volumes:
+      - /data:/var/lib/mysql
+      - ./mysql_config/my.cnf:/etc/my.cnf
+  api:
+     build: .
+     command: ["/app/wait-for-it.sh","db:3306","--","bash","-c","python manage.py makemigrations && python manage.py migrate && python manage.py runserver 0.0.0.0:8000"]
+     ports:
+       - 8000:8000
+     depends_on:
+       - db
