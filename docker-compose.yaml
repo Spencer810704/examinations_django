@@ -10,6 +10,7 @@ services:
       - ./mysql_config/my.cnf:/etc/my.cnf
   api:
      build: .
+     # 等待wait-for-it.sh腳本偵測MySQL服務啟動後才執行命令
      command: ["/app/wait-for-it.sh","db:3306","--","bash","-c","python manage.py makemigrations && python manage.py migrate && python manage.py runserver 0.0.0.0:8000"]
      ports:
        - 8000:8000
