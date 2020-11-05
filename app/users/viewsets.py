@@ -15,7 +15,7 @@ class MyUserViewSet(ModelViewSet):
     def destroy(self, request, *args, **kwargs):
         try:
             instance = self.get_object()
-            val = self.perform_destroy(instance)
+            self.perform_destroy(instance)
             result = {
                 'status': 'delete success!'
             }
