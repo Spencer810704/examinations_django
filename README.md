@@ -82,11 +82,11 @@
 
 | Support Method | URI               | Description      |
 | -------------- |:----------------- |:---------------- |
-| GET            | api/v1/users/<id> | 查詢單一用戶資訊    |
+| GET            | api/v1/users/\<id> | 查詢單一用戶資訊    |
 | GET            | api/v1/users/     | 查詢所有用戶資訊    |
 | POST           | api/v1/users/     | 新增用戶資訊       |
-| PUT            | api/v1/users/<id> | 修改用戶資訊       |
-| DELETE         | api/v1/users/<id> | 刪除用戶資訊       |
+| PUT            | api/v1/users/\<id> | 修改用戶資訊       |
+| DELETE         | api/v1/users/\<id> | 刪除用戶資訊       |
 
 ---
 
