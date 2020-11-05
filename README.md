@@ -56,7 +56,6 @@
 ├── docker-compose.yaml
 ├── Dockerfile
 ├── mysql_config
-└── persistent_data
 ```
 
 檔案用途說明
@@ -65,8 +64,8 @@
 * `docker-compose.yaml` : docker-compose編排文件，整合Django項目容器以及MySQL容器。
 * `mysql_config/my.cnf` : 容器內部透過掛載外部MYSQL配置檔案，進行預設Character-Set設置。
 
-目錄用途說明
-* `persistent_data` : 掛載該volume避免資料庫容器異常時數據遺失，進行數據持久化。
+補充說明
+* `/data` : 掛載Guest_OS的/data目錄避免資料庫容器異常時數據遺失，進行數據持久化。
 
 ---
 ## Table Schema And Entity-relationship Model
